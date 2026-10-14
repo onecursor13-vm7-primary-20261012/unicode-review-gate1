@@ -7,3 +7,13 @@ pull_request_rules:
     actions:
       merge:
         method: merge
+
+merge_protections_settings:
+  auto_merge_conditions: true
+
+merge_protections:
+  - name: vm7-readbot-owner-review-261015
+    if:
+      - base = vm7-readbot-protected-261015
+    success_conditions:
+      - approved-reviews-by = onecursor13-vm7-secondary-20261013
