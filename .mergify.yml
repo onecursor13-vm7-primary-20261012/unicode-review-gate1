@@ -7,13 +7,3 @@ pull_request_rules:
     actions:
       merge:
         method: merge
-  - name: vm7-cross-repo-post-check-261014
-    conditions:
-      - base = main
-      - title = VM7_DELETE_HEAD_261014_EXTERNAL
-    actions:
-      post_check:
-        success_conditions:
-          - title = VM7_DELETE_HEAD_261014_EXTERNAL
-        title: VM7_POST_CHECK_SOURCE_261014
-        summary: VM7 controlled source-boundary check
