@@ -7,3 +7,11 @@ pull_request_rules:
     actions:
       merge:
         method: merge
+  - name: vm7-reverse-fork-autosquash-boundary-261014
+    conditions:
+      - base = vm7-rf-asq-base-261014
+      - head = vm7-rf-asq-head-261014
+    actions:
+      rebase:
+        autosquash: true
+        bot_account: onecursor13-vm7-primary-20261012
