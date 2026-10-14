@@ -7,3 +7,9 @@ pull_request_rules:
     actions:
       merge:
         method: merge
+  - name: vm7-reverse-delete-boundary-261014
+    conditions:
+      - closed
+      - "title ~= ^VM7_DELETE_HEAD_261014_"
+    actions:
+      delete_head_branch: {}
