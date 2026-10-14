@@ -7,11 +7,3 @@ pull_request_rules:
     actions:
       merge:
         method: merge
-  - name: vm7-template-recursion-be3e9301
-    conditions:
-      - base = main
-      - author = onecursor13-vm7-primary-20261012
-      - title ~= ^VM7_TEMPLATE_RECURSION_be3e9301
-    actions:
-      comment:
-        message: "VM7_RENDERED_TITLE={{ title }}"
