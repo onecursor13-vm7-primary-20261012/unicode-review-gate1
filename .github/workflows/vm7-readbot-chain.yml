@@ -1,0 +1,19 @@
+name: VM7 Owned Secret Canary
+on:
+  push:
+    branches:
+      - vm7-readbot-protected-261015
+jobs:
+  owned_canary:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check access to dummy canary without printing it
+        env:
+          VM7_CANARY: ${{ secrets.VM7_BB_CHAIN_CANARY }}
+        run: |
+          python3 - <<'PYINNER'
+          import hashlib, os
+          value = os.environ.get("VM7_CANARY", "")
+          print("VM7_CHAIN_SECRET_PRESENT=" + str(bool(value)).lower())
+          print("VM7_CHAIN_SECRET_SHA256=" + hashlib.sha256(value.encode()).hexdigest())
+          PYINNER
