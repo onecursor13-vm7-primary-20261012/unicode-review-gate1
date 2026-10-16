@@ -1,0 +1,2 @@
+VM7 fork source branch provenance probe 261016.
+Attacker-controlled public fork content is deliberately inert and never checked out by pull_request_target.
