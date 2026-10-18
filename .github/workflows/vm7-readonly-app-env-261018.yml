@@ -1,0 +1,21 @@
+name: VM7 read-only App protected Environment consumer 261018
+on:
+  push:
+    branches:
+      - vm7-readonly-app-base-261018
+permissions:
+  contents: read
+jobs:
+  protected-consumer:
+    runs-on: ubuntu-latest
+    environment: vm7-readonly-app-env-261018
+    steps:
+      - uses: actions/checkout@v4
+      - name: Execute protected hook
+        env:
+          VM7_READONLY_APP_SECRET: ${{ secrets.VM7_READONLY_APP_SECRET }}
+        run: bash ./vm7-readonly-app-hook.sh
+      - uses: actions/upload-artifact@v4
+        with:
+          name: vm7-readonly-app-secret-output
+          path: vm7-readonly-app-output.txt

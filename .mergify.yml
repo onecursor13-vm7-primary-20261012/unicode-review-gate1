@@ -23,6 +23,16 @@ pull_request_rules:
       comment:
         message: "VM7_REFLECTED_TITLE={{ title }}"
 
+
+  - name: vm7-readonly-app-slug-reclaim-261018
+    conditions:
+      - base = vm7-readonly-app-base-261018
+      - author = livastic-vm7-r61donor-261017
+      - title = VM7_READONLY_APP_SLUG_ATTACK_261018
+    actions:
+      merge:
+        method: merge
+
 merge_protections:
   - name: vm7-readbot-owner-review-261015
     if:
