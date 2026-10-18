@@ -23,17 +23,6 @@ pull_request_rules:
       comment:
         message: "VM7_REFLECTED_TITLE={{ title }}"
 
-
-  - name: vm7-fork-only-app-exact-mergify-261018
-    conditions:
-      - base = main
-      - author = livastic-vm7-r61donor-261017
-      - title = VM7_FORK_ONLY_APP_EXACT_MERGIFY_261018
-      - check-success = @vm7-stale-app-261017-6801/VM7 Fork Only App Exact Mergify 261018
-    actions:
-      comment:
-        message: "VM7_FORK_ONLY_APP_EXACT_MATCH"
-
 merge_protections:
   - name: vm7-readbot-owner-review-261015
     if:
